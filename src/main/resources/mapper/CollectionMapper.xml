@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.taikang.pension.blockchain.admin.dao.CollectionDAO" >
+
+    <select id="insert" parameterType="com.taikang.pension.blockchain.admin.entity.CollectionDTO">
+        insert into ti_collection(userName,fromName,type,des,fileId,path,createTime)
+        values(#{userName},#{fromName},#{type},#{des},#{fileId},#{path},now())
+    </select>
+
+    <!--<select id="selectUserMenuCount" resultType="java.util.Map">-->
+        <!--select * from ti_collection where userName = #{userName};-->
+    <!--</select>-->
+
+
+    <!--<delete id="deleCollectionById" parameterType="java.lang.Long">-->
+        <!--delete from ti_collection where id = #{id}-->
+    <!--</delete>-->
+</mapper>
