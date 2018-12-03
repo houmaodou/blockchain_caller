@@ -149,15 +149,18 @@ spring:
         min-idle: 5       # 连接池中的最小空闲连接
   # 数据源配置
   datasource:
-    url: jdbc:mysql://123.56.100.207:3306/blockchain?useUnicode=true&characterEncoding=utf8&useSSL=false&tinyInt1isBit=true
-    username: root
-    password: 163@tfy.com
+    url: jdbc:mysql://localhost:3306/t11ca?useUnicode=true&characterEncoding=utf8&useSSL=false&tinyInt1isBit=true
+    username: blockchain
+    password: "blockchain1@3"
 
 #日志
 logging:
   config: classpath:log/logback.xml
-  path: /root/tinode/log
-
+  path: /home/docker/blockchain_caller
+file:
+  staticAccessPath: /api/file/**
+#文件上传目录
+  uploadFolder: /home/docker/blockchain_caller/uploadFiles/
 #自定义配置属性
 #源码生成文件夹
 #本地路径
@@ -196,7 +199,7 @@ spring:
 #日志
 logging:
   config: classpath:log/logback.xml
-  path: /home/log/blockchain
+  path: /home/docker/blockchain_caller
 
 #自定义配置属性
 #源码生成文件夹

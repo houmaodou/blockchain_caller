@@ -63,7 +63,7 @@ public class BlockChainCallerController {
             RestResponse answer = restTemplate.postForObject(url, entity, RestResponse.class);
             return answer;
         } catch (Exception e) {
-            String errMessage ="Error when putting public person info to blockchain";
+            String errMessage ="Error when putting person into  blockchain";
             LOGGER.error(errMessage, e);
             return RestResponse.failure(errMessage+"：" + e.getMessage());
         }

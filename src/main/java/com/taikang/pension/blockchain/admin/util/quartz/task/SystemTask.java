@@ -18,9 +18,6 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
-import java.io.IOException;
-import java.util.List;
-
 /**
  * Created by houhx02 on 2018/1/26.
  * 系统定时任务
@@ -47,7 +44,7 @@ public class SystemTask {
         String url = Constants.ENDPOINT_URL+"/QueryInfo";
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-        String requestJson =  constructQueryInfoRequestBody();
+        String requestJson =  buildQueryInfoRequestBody();
         try {
             HttpEntity<String> entity = new HttpEntity<String>(requestJson,headers);
             RestResponse answer = restTemplate.postForObject(url, entity, RestResponse.class);
@@ -84,7 +81,7 @@ public class SystemTask {
 
     }
 
-    private String constructQueryInfoRequestBody() {
+    private String buildQueryInfoRequestBody() {
         JSONObject obj = new JSONObject();
         obj.put("orgname",Constants.TAIKANG_ORG_CODE);
         obj.put("privkey",Constants.PRIVATE_KEY);
